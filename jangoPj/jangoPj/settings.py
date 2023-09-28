@@ -74,12 +74,11 @@ WSGI_APPLICATION = 'jangoPj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+from .my_settings import MY_SECRET, MY_DATABASES
+
+SECRET_KEY = MY_SECRET['SECRET_KEY']
+
+DATABASES = MY_DATABASES
 
 
 # Password validation
